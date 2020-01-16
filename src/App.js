@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Form from './Form';
+import TaskTile from './TaskTile';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Header/>
       <br></br>
       <Form/>
+      <br></br>
+      <TaskTile/>
     </div>
   );
 }
