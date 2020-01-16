@@ -10,13 +10,14 @@ class TaskBox extends React.Component {
     render() {
         return (
 
-            <div>
-                <div className="box row col-lg-5">
+
+            <div className="box">
+                <div className="row col-lg-5">
                     <TaskTitle />
                     <TaskHeader />
                     <TaskList />
-
                 </div>
+
             </div>
 
         );

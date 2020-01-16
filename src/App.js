@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import Form from './Form';
 import TaskTile from './TaskTile';
+import TaskBox from './TaskBox';
 import Test_Task_List from './Test_Task_List';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <br></br>
       <Form/>
       <br></br>
-      <Test_Task_List/>
+      <TaskBox/>
     </div>
   );
 }
