@@ -1,0 +1,133 @@
+/* Page components */
+
+body {
+    background-color: #A082A0;
+    cursor: default;
+}
+
+
+.box {
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+}
+
+#taskForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 1.5rem;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+
+  button {
+    display: inline-block;
+    height: 30px;
+    flex: 100 0 0;
+    margin: 10px 0 0 10px;
+    border-radius: 25px;
+    background-color: white;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    cursor: pointer;
+}
+
+/* Text, fonts and icons */
+
+h1 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    overflow: auto;
+}
+
+h2 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 22px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+
+}
+
+h3 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    color: #C8A2C8;
+}
+
+label {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    width: 200px;
+    line-height: 10px;
+    margin-bottom: 10px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+  
+  input {
+    height: 20px;
+    flex: 0 0 100px;
+    margin-left: 10px;
+    cursor: text;
+  }
+
+.taskTitle {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    color: #C8A2C8;
+    padding: 10px 0 0 0;
+}
+
+.taskHeader {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    padding: 20px;
+    color: #C8A2C8;
+}
+
+.taskEntry {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    cursor: pointer;
+}
+
+.goalDate {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    cursor: pointer;
+}
+
+.i {
+    font-size: 16px;
+}
+
+/* Dynamic elements */
+
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 3 auto; /* Can turn to 0 to otherwise give a scrolling effect as the typing happens */
+    letter-spacing: .10em;
+    animation: 
+      typing 3.5s steps(30),
+      blink-caret .5s step-end; /* Unsure how to remove static cursor from remaining on the page after the animation event has finished */
+} /*Typing effect:- */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 50% }
+  }/* The typewriter cursor effect :-*/
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+  }
+
+button:hover {
+    color: #C8A2C8;
+}
+.taskEntry:hover {
+    cursor: pointer;
+    color: #C8A2C8;
+}
+
+.goalDate:hover {
+    color: #C8A2C8;
+}
+
+
+
