@@ -7,7 +7,9 @@ class TaskList extends React.Component {
     render() {
         return (
 
+            <div>
             <div className="col-5 goalDate">XX XX XX</div>
+            </div>
 
         );
     }

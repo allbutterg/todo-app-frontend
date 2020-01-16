@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import Form from './Form';
 import TaskTile from './TaskTile';
+import Test_Task_List from './Test_Task_List';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <br></br>
       <Form/>
       <br></br>
-      <TaskTile/>
+      <Test_Task_List/>
     </div>
   );
 }

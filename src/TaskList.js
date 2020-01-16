@@ -8,9 +8,11 @@ class TaskList extends React.Component {
     render() {
         return (
 
+            <div>
             <div className="row col-12">
                 <div className="col-7 taskEntry">Example Task @ Priority 1</div>
                 <TaskGoalDate/>
+            </div>
             </div>
 
         );

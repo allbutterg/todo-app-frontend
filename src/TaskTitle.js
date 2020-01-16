@@ -7,14 +7,15 @@ class TaskTitle extends React.Component {
     render() {
         return (
 
-            <div className="row col-12">
-            <div className="row col-7 taskHeader">
-                Task
+            <div>
+            <div className="row col-12"></div>
+            <div className="col-3 taskTitle">Personal</div>
+            <div className="col-9">
+                <button type="button">Update <i className="far fa-edit"></i></button> <button type="button">Delete <i
+                        className="far fa-trash-alt"></i></button> <button type="button">Done <i
+                        className="far fa-paper-plane"></i></button>
             </div>
-            <div className="col-5 taskHeader">
-                Complete By
             </div>
-        </div>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TaskBox from './TaskHeader';
+import TaskBox from './TaskTitle';
 
 
 class TaskTile extends React.Component {
