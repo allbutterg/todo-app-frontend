@@ -6,6 +6,7 @@ import TaskBoxMore from './TaskBoxMore';
 
 
 class TaskTile extends React.Component {
+
     render() {
         return (
 

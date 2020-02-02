@@ -7,13 +7,14 @@ import TaskList from './TaskList';
 
 
 class TaskBoxMore extends React.Component {
+
     render() {
         return (
             
                 <div className="box row col-lg-5">
                     <TaskTitle />
                     <TaskHeader />
-                    <TaskList />
+                   
                 </div>
 
             

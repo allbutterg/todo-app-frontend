@@ -4,21 +4,17 @@ import './App.css';
 import Header from './Header';
 import Form from './Form';
 import TaskTile from './TaskTile';
-import TaskHeader from './TaskHeader';
-import TaskBox from './TaskBox';
-import TaskBoxMore from './TaskBoxMore';
-
-import Test_Task_List from './Test_Task_List';
 
 function App() {
+
   return (
     <div className="container">
       <br></br>
-      <Header/>
+      <Header />
       <br></br>
-      <Form/>
+      <Form />
       <br></br>
-      <TaskTile/>
+      <TaskTile />
     </div>
   );
 }
