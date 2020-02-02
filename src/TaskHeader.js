@@ -7,16 +7,13 @@ class TaskHeader extends React.Component {
     render() {
         return (
 
-            <div>
-            <div className="row col-12">
-            <div className="row col-7 taskHeader">
-                Task
-            </div>
-            <div className="col-5 taskHeader">
-                Complete By
-            </div>
-        </div>
-        </div>
+            <>
+                <div className="row col-12">
+                    <div className="col-7 taskHeader">Task</div>
+                    <div className="col-5 taskHeader">Complete By</div>
+                </div>
+            </>
+
         );
     }
 }

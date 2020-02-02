@@ -6,7 +6,7 @@ import TaskHeader from './TaskHeader';
 import TaskList from './TaskList';
 
 
-class TaskBox extends React.Component {
+class TaskBoxMore extends React.Component {
     render() {
         return (
             
@@ -21,7 +21,7 @@ class TaskBox extends React.Component {
         );
     }
 }
-export default TaskBox;
+export default TaskBoxMore;
 
 
 

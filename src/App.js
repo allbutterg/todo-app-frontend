@@ -4,7 +4,10 @@ import './App.css';
 import Header from './Header';
 import Form from './Form';
 import TaskTile from './TaskTile';
+import TaskHeader from './TaskHeader';
 import TaskBox from './TaskBox';
+import TaskBoxMore from './TaskBoxMore';
+
 import Test_Task_List from './Test_Task_List';
 
 function App() {
@@ -15,9 +18,9 @@ function App() {
       <br></br>
       <Form/>
       <br></br>
-      <TaskBox/>
+      <TaskTile/>
     </div>
   );
 }
 
-export default App;
+export default App; 
