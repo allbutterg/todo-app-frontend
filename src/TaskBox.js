@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import TaskTitle from './TaskTitle';
 import TaskHeader from './TaskHeader';
-import TaskList from './TaskList';
+import TaskList01 from './TaskList01';
 
 
 class TaskBox extends React.Component {
@@ -13,7 +13,7 @@ class TaskBox extends React.Component {
             {
                 id: 1,
                 category: "Personal",
-                description: "Complete BBC homework",
+                description: "Complete TR homework",
                 priority: 1,
                 completed: false
             },
@@ -43,7 +43,7 @@ class TaskBox extends React.Component {
             <div className="box row col-lg-5">
                 <TaskTitle />
                 <TaskHeader />
-                <TaskList taskCollection={this.state.tasks} />
+                <TaskList01 taskCollection={this.state.tasks} />
             </div>
 
 
