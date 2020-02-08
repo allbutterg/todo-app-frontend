@@ -4,6 +4,7 @@ import './App.css';
 import TaskTitle from './TaskTitle';
 import TaskHeader from './TaskHeader';
 import TaskList02 from './TaskList02';
+import TaskCount2 from './TaskCount2';
 
 
 class TaskBoxMore extends React.Component {
@@ -44,6 +45,7 @@ class TaskBoxMore extends React.Component {
                     <TaskTitle />
                     <TaskHeader />
                     <TaskList02 taskCollection={this.state.tasks} />
+                    <TaskCount2 taskCount2={this.state.tasks.length} />
                 </div>
 
             

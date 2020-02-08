@@ -4,7 +4,7 @@ import './App.css';
 import Task from './Task';
 
 
-class TaskList extends React.Component {
+class TaskList01 extends React.Component {
     render() {
         return (
                 <div className="row col-12">
@@ -21,4 +21,4 @@ class TaskList extends React.Component {
         );
     }
 }
-export default TaskList;
+export default TaskList01;
