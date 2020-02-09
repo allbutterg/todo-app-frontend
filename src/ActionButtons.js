@@ -7,7 +7,7 @@ class ActionButtons extends React.Component {
 
 
 editClicked = () => {
-    alert("Do you want to edit your task?");
+    alert("Do you want to edit your task ${this.props.item.id}?");
 }
 
 deleteClicked = () => {
@@ -21,9 +21,9 @@ doneClicked = () => {
     render() {
         return (
             
-            <div className="col-9">
-                <button type="button" onClick={this.editClicked}>Update <i className="far fa-edit"></i></button> <button type="button" onClick={this.deleteClicked}>Delete <i
-                        className="far fa-trash-alt"></i></button> <button type="button" onClick={this.doneClicked}>Done <i
+            <div className="col-4">
+                <button type="button" onClick={this.editClicked}> <i className="far fa-edit"></i></button>  <button type="button" onClick={this.deleteClicked}> <i
+                        className="far fa-trash-alt"></i></button>  <button type="button" onClick={this.doneClicked}> <i
                         className="far fa-paper-plane"></i></button>
             </div>
     

@@ -11,7 +11,7 @@ class TaskTile extends React.Component {
         return (
 
             <div className="row col-lg-12 flex-wrap">
-                <TaskBox/>
+                <TaskBox />
                 <TaskBoxMore/>
 
             </div>

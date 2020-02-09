@@ -9,7 +9,7 @@ class Header extends React.Component {
         <div className="row typewriter col-lg-12">
            
             <h1>OH TODO! We've got X tasks to do...</h1>
-            <TaskCount />
+            
            
         </div>
       );

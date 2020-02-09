@@ -9,8 +9,9 @@ class TaskHeader extends React.Component {
 
             <>
                 <div className="row col-12">
-                    <div className="col-7 taskHeader">Task</div>
-                    <div className="col-5 taskHeader">Complete By</div>
+                    <div className="col-5 taskHeader">Task</div>
+                    <div className="col-3 taskHeader">Complete By</div>
+                    <div className="col-4 taskHeader">Edit  Delete  Done</div>
                 </div>
             </>
 

@@ -1,17 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ActionButtons from './ActionButtons';
 
 
-class TaskList extends React.Component {
+class TaskGoalDate extends React.Component {
     render() {
         return (
 
-          
-            <div className="col-5 goalDate">XX XX XX</div>
-         
+          <>
+            <div className="col-3 goalDate">{this.props.item.goaldate}</div>
+           
+         </>
 
         );
     }
 }
-export default TaskList;
+export default TaskGoalDate;

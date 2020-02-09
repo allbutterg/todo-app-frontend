@@ -4,13 +4,19 @@ import './App.css';
 import Task from './Task';
 
 
-class TaskList extends React.Component {
+class TaskList02 extends React.Component {
+
+    deleteTask = (taskId) => {
+        alert(`You deleted task ${taskId}`);
+    }
+
+    
     render() {
         return (
                 <div className="row col-12">
                    
                     {this.props.taskCollection.map(
-                            (taskItem)=><Task item={taskItem} />
+                            (taskItem)=><Task item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} />
                         )
                     }
                   
@@ -21,4 +27,4 @@ class TaskList extends React.Component {
         );
     }
 }
-export default TaskList;
+export default TaskList02;

@@ -16,6 +16,7 @@ class TaskBoxMore extends React.Component {
                 category: "Work",
                 description: "Prepare check-in presentation",
                 priority: 1,
+                goaldate: "05/03/20",
                 completed: false
             },
 
@@ -24,6 +25,7 @@ class TaskBoxMore extends React.Component {
                 category: "Work",
                 description: "Read E-commerce book",
                 priority: 1,
+                goaldate: "14/02/20",
                 completed: false
             },
 
@@ -32,20 +34,33 @@ class TaskBoxMore extends React.Component {
                 category: "Work",
                 description: "Gain feedback from team",
                 priority: 2,
+                goaldate: "21/02/20",
                 completed: false
             }
 
         ]
     }
 
+
+    deleteTask = (taskId) => {
+        const updatedTasks = this.tasks.filter(item => item.id !== taskId);
+
+        this.setState({
+            tasks: updatedTasks
+        });
+
+    }
+
+
+
     render() {
         return (
             
-                <div className="box row col-lg-5">
+                <div className="box row col-lg-8">
                     <TaskTitle />
                     <TaskHeader />
-                    <TaskList02 taskCollection={this.state.tasks} />
-                    <TaskCount2 taskCount2={this.state.tasks.length} />
+                    <TaskList02 taskCollection={this.state.tasks} deleteTaskFunc={this.deleteTask}/>
+                    {/* <TaskCount2 taskCount2={this.state.tasks.length} /> */}
                 </div>
 
             

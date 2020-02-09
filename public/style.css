@@ -28,7 +28,7 @@ body {
     display: inline-block;
     height: 30px;
     flex: 100 0 0;
-    margin: 10px 0 0 10px;
+    margin: 10px 10px 0 10px;
     border-radius: 25px;
     background-color: white;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
@@ -85,11 +85,13 @@ label {
 .taskEntry {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
     cursor: pointer;
+    margin: 10px 0 0 0;
 }
 
 .goalDate {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
     cursor: pointer;
+    margin: 10px 0 0 0;
 }
 
 .i {
