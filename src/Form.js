@@ -1,8 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TaskBox from './TaskBox';
 
 class Form extends React.Component {
+
+  addTask = () => {
+    alert("You've added a task!");
+  }
+
+
   render() {
     return (
 
@@ -53,7 +60,7 @@ class Form extends React.Component {
           <div className="form-group row">
 
             <div className="col-lg-5">
-              <button type="submit" className="form-control">Add</button>
+              <button type="submit" className="form-control" onClick={this.addTask}>Add</button>
             </div>
 
           </div>
@@ -62,10 +69,12 @@ class Form extends React.Component {
         </form>
       </div>
 
-
-
     );
+
+   
   }
+
+ 
 }
 
 export default Form;

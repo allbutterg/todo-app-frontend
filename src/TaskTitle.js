@@ -13,6 +13,8 @@ class TaskTitle extends React.Component {
                 Personal
                 
                 </div>
+
+                
                 
 
         );

@@ -14,9 +14,9 @@ deleteClicked = () => {
     alert("Are you sure you want to delete this button?");
 }
 
-doneClicked = () => {
-    alert("Well done, you've completed this task!");
-}
+// doneClicked = () => {
+//     this.props.completedTaskFunc(this.props.item.id);
+// }
 
     render() {
         return (

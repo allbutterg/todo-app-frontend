@@ -11,17 +11,22 @@ class TaskList01 extends React.Component {
         alert(`You deleted task ${taskId}`);
     }
 
+    completeTask = (taskId) => {
+        alert(`Do you want to delete ${taskId} from state?`)
+    }
+
     render() {
         return (
             <div className="row col-12">
 
                 {this.props.taskCollection.map(
-                    (taskItem) => <Task item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} />
+                    (taskItem) => <Task item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} completedTaskFunc={this.props.completeTask} />
                 )
                 }
 
 
             </div>
+
 
 
 

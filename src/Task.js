@@ -18,7 +18,7 @@ class Task extends React.Component {
     }
     
     doneClicked = () => {
-        alert(`Well done, you've completed this task ${this.props.item.id}?!`);
+        this.props.completedTaskFunc(this.props.item.id);
     }
 
     

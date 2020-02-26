@@ -5,6 +5,7 @@ import TaskTitle from './TaskTitle';
 import TaskHeader from './TaskHeader';
 import TaskList02 from './TaskList02';
 import TaskCount2 from './TaskCount2';
+import Task from './Task';
 
 
 class TaskBoxMore extends React.Component {
@@ -24,7 +25,7 @@ class TaskBoxMore extends React.Component {
                 id: 2,
                 category: "Work",
                 description: "Read E-commerce book",
-                priority: 1,
+                priority: 3,
                 goaldate: "14/02/20",
                 completed: false
             },
@@ -43,7 +44,8 @@ class TaskBoxMore extends React.Component {
 
 
     deleteTask = (taskId) => {
-        const updatedTasks = this.tasks.filter(item => item.id !== taskId);
+
+        const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
 
         this.setState({
             tasks: updatedTasks
@@ -59,7 +61,7 @@ class TaskBoxMore extends React.Component {
                 <div className="box row col-lg-8">
                     <TaskTitle />
                     <TaskHeader />
-                    <TaskList02 taskCollection={this.state.tasks} deleteTaskFunc={this.deleteTask}/>
+                    <TaskList02 taskCollection={this.state.tasks} deleteTaskFunc={this.deleteTask} />
                     {/* <TaskCount2 taskCount2={this.state.tasks.length} /> */}
                 </div>
 

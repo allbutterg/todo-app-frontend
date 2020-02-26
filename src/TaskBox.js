@@ -7,6 +7,7 @@ import TaskList01 from './TaskList01';
 import TaskCount1 from './TaskCount1';
 import TaskGoalDate from './TaskGoalDate';
 import ActionButtons from './ActionButtons';
+import Task from './Task';
 
 
 class TaskBox extends React.Component {
@@ -45,12 +46,38 @@ class TaskBox extends React.Component {
 
     deleteTask = (taskId) => {
 
-        const updatedTasks = this.tasks.filter(item => item.id !== taskId);
+        const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
 
         this.setState({
             tasks: updatedTasks
         });
 
+    }
+
+
+    addTask = (taskDescription) => {
+
+
+        const taskToAdd = {
+            id: 10,
+            category: "Personal",
+            description: taskDescription,
+            priority: 1,
+            goalDate: "19/03/20",
+            completed: false
+        };
+
+        const currentTasks = this.state.tasks;
+
+        currentTasks.push(taskToAdd);
+
+        this.setState({
+            tasks: currentTasks
+        });
+    }
+
+    completeTask = (taskId) => {
+        alert(`Do you want to delete ${taskId} from state?`)
     }
 
 
@@ -60,7 +87,10 @@ class TaskBox extends React.Component {
             <div className="box row col-lg-8">
                 <TaskTitle taskCollection={this.state.tasks} />
                 <TaskHeader />
-                <TaskList01 taskCollection={this.state.tasks} deleteTaskFunc={this.deleteTask} />
+                <TaskList01 
+                taskCollection={this.state.tasks}
+                deleteTaskFunc={this.deleteTask} 
+                completedTaskFunc={this.completeTask} />
                 {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
 
             </div>
