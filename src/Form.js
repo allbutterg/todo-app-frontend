@@ -5,8 +5,12 @@ import TaskBox from './TaskBox';
 
 class Form extends React.Component {
 
-  addTask = () => {
-    alert("You've added a task!");
+  state = {
+    taskDescription: "Pick up pancake ingredients"
+  }
+
+  addTaskPersonal = () => {
+    this.props.addTaskFuncPersonal(this.state.taskDescription);
   }
 
 
@@ -60,7 +64,7 @@ class Form extends React.Component {
           <div className="form-group row">
 
             <div className="col-lg-5">
-              <button type="submit" className="form-control" onClick={this.addTask}>Add</button>
+              <button type="submit" className="form-control" onClick={this.addTaskPersonal}>Add</button>
             </div>
 
           </div>

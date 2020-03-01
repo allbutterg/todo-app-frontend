@@ -2,20 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
-class Task extends React.Component {
+class TaskWork extends React.Component {
 
     editClicked = () => {
         alert(`Do you want to edit your task ${this.props.item.id}?`);
     }
     
     deleteClicked = () => {
-        this.props.deleteTaskFuncPersonal(this.props.item.id);
+        this.props.deleteTaskFuncWork(this.props.item.id);
 
     }
     
     doneClicked = () => {
-        this.props.completedTaskFuncPersonal(this.props.item.id);
+        this.props.completedTaskFuncWork(this.props.item.id);
     }
 
     
@@ -42,8 +41,4 @@ class Task extends React.Component {
         );
     }
 }
-export default Task;
-
-
-// <div className="col-7 taskEntry">Example Task @ Priority 2</div>
-                    // <div className="col-7 taskEntry">Example Task @ Priority 3</div>
+export default TaskWork;

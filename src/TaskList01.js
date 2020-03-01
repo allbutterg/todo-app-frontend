@@ -2,16 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Task from './Task';
-import TaskGoalDate from './TaskGoalDate';
 
 
 class TaskList01 extends React.Component {
 
-    deleteTask = (taskId) => {
+    deleteTaskPersonal = (taskId) => {
         alert(`You deleted task ${taskId}`);
     }
 
-    completeTask = (taskId) => {
+    completeTaskPersonal = (taskId) => {
         alert(`Do you want to delete ${taskId} from state?`)
     }
 
@@ -19,8 +18,8 @@ class TaskList01 extends React.Component {
         return (
             <div className="row col-12">
 
-                {this.props.taskCollection.map(
-                    (taskItem) => <Task item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} completedTaskFunc={this.props.completeTask} />
+                {this.props.taskCollectionPersonal.map(
+                    (taskItem) => <Task item={taskItem} deleteTaskFuncPersonal={this.props.deleteTaskFuncPersonal} completedTaskFuncPersonal={this.props.completeTaskPersonal} />
                 )
                 }
 

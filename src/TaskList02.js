@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Task from './Task';
+import TaskWork from './TaskWork';
 
 
 class TaskList02 extends React.Component {
 
-    deleteTask = (taskId) => {
+    deleteTaskWork = (taskId) => {
         alert(`You deleted task ${taskId}`);
     }
 
@@ -15,8 +15,8 @@ class TaskList02 extends React.Component {
         return (
                 <div className="row col-12">
                    
-                    {this.props.taskCollection.map(
-                            (taskItem)=><Task item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} />
+                    {this.props.taskCollectionWork.map(
+                            (taskItem)=><TaskWork item={taskItem} deleteTaskFuncWork={this.props.deleteTaskFuncWork} />
                         )
                     }
                   
