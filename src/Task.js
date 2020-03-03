@@ -8,33 +8,33 @@ class Task extends React.Component {
     editClicked = () => {
         alert(`Do you want to edit your task ${this.props.item.id}?`);
     }
-    
+
     deleteClicked = () => {
-        this.props.deleteTaskFuncPersonal(this.props.item.id);
+        this.props.deleteTaskFunc(this.props.item.id);
 
     }
-    
+
     doneClicked = () => {
-        this.props.completedTaskFuncPersonal(this.props.item.id);
+        this.props.completedTaskFunc(this.props.item.id);
     }
 
-    
+
     render() {
         return (
 
             <>
-                <div className="col-5 taskEntry">
+                <div className="col-4 taskEntry">
                     {this.props.item.description}
-                   
                 </div>
-        
+
+                <div className="col-2 categoryName">{this.props.item.category}</div>
                 <div className="col-3 goalDate">{this.props.item.goaldate}</div>
-        <div className="col-4">
-                <button type="button" onClick={this.editClicked}> <i className="far fa-edit"></i></button>  <button type="button" onClick={this.deleteClicked}> <i
+                <div className="col-3">
+                    <button type="button" onClick={this.editClicked}> <i className="far fa-edit"></i></button>  <button type="button" onClick={this.deleteClicked}> <i
                         className="far fa-trash-alt"></i></button>  <button type="button" onClick={this.doneClicked}> <i
-                        className="far fa-paper-plane"></i></button>
-            </div>
-                
+                            className="far fa-paper-plane"></i></button>
+                </div>
+
 
             </>
 
@@ -44,6 +44,3 @@ class Task extends React.Component {
 }
 export default Task;
 
-
-// <div className="col-7 taskEntry">Example Task @ Priority 2</div>
-                    // <div className="col-7 taskEntry">Example Task @ Priority 3</div>

@@ -1,5 +1,6 @@
 /* Page components */
 
+
 body {
     background-color: #A082A0;
     cursor: default;
@@ -10,7 +11,7 @@ body {
     display: flex;
     background-color: white;
     border-radius: 25px;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     margin: 10px;
     text-align: left;
 }
@@ -83,6 +84,12 @@ label {
 }
 
 .taskEntry {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+}
+
+.categoryName {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; line-height: 26.4px;
     cursor: pointer;
     margin: 10px 0 0 0;

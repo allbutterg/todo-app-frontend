@@ -6,11 +6,11 @@ import Task from './Task';
 
 class TaskList01 extends React.Component {
 
-    deleteTaskPersonal = (taskId) => {
+    deleteTask = (taskId) => {
         alert(`You deleted task ${taskId}`);
     }
 
-    completeTaskPersonal = (taskId) => {
+    completeTask = (taskId) => {
         alert(`Do you want to delete ${taskId} from state?`)
     }
 
@@ -18,16 +18,13 @@ class TaskList01 extends React.Component {
         return (
             <div className="row col-12">
 
-                {this.props.taskCollectionPersonal.map(
-                    (taskItem) => <Task item={taskItem} deleteTaskFuncPersonal={this.props.deleteTaskFuncPersonal} completedTaskFuncPersonal={this.props.completeTaskPersonal} />
+                {this.props.taskCollection.map(
+                    (taskItem) => <Task item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} completedTaskFunc={this.props.completeTask} />
                 )
                 }
 
 
             </div>
-
-
-
 
         );
     }

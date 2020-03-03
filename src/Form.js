@@ -5,12 +5,16 @@ import TaskBox from './TaskBox';
 
 class Form extends React.Component {
 
-  state = {
-    taskDescription: "Pick up pancake ingredients"
+
+  addTask = () => {
+    this.props.addTaskFunc("Book train ticket");
   }
 
-  addTaskPersonal = () => {
-    this.props.addTaskFuncPersonal(this.state.taskDescription);
+
+  taskDescriptionChanged = (event) => {
+    this.setState({
+   taskDescription: event.target.value
+    }); 
   }
 
 
@@ -26,7 +30,7 @@ class Form extends React.Component {
 
             <div className="col-lg-7">
               <input type="text" className="form-control" name="newTask" id="newTask"
-                placeholder="What's next to do?" required></input>
+                placeholder="What's next to do?" required onChange={this.taskDescriptionChanged} ></input>
             </div>
           </div>
 
@@ -64,7 +68,7 @@ class Form extends React.Component {
           <div className="form-group row">
 
             <div className="col-lg-5">
-              <button type="submit" className="form-control" onClick={this.addTaskPersonal}>Add</button>
+              <button type="submit" className="form-control" onClick={this.addTask}>Add</button>
             </div>
 
           </div>

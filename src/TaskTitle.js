@@ -9,7 +9,7 @@ class TaskTitle extends React.Component {
 
 
             <div className="col-5 taskTitle">
-                Personal
+                My Tasks
                 
                 </div>
 

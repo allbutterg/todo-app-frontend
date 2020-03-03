@@ -9,9 +9,9 @@ import TaskList02 from './TaskList02';
 
 class Container extends React.Component {
 
-    //Personal Tasks
+//Tasks List
     state = {
-        tasksPersonal: [
+        tasks: [
             {
                 id: 1,
                 category: "Personal",
@@ -37,13 +37,10 @@ class Container extends React.Component {
                 priority: 2,
                 goaldate: "29/02/20",
                 completed: false
-            }
+            },
 
-        ],
-
-        tasksWork: [
             {
-                id: 1,
+                id: 4,
                 category: "Work",
                 description: "Prepare check-in presentation",
                 priority: 1,
@@ -52,7 +49,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 2,
+                id: 5,
                 category: "Work",
                 description: "Read E-commerce book",
                 priority: 3,
@@ -61,7 +58,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 3,
+                id: 6,
                 category: "Work",
                 description: "Gain feedback from team",
                 priority: 2,
@@ -72,23 +69,23 @@ class Container extends React.Component {
         ]
     }
 
-    //Personal Task List functions
+    //Task List functions
 
-    deleteTaskPersonal = (taskId) => {
+    deleteTask = (taskId) => {
 
-        const updatedTasksPersonal = this.state.tasksPersonal.filter(item => item.id !== taskId);
+        const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
 
         this.setState({
-            tasksPersonal: updatedTasksPersonal
+            tasks: updatedTasks
         });
 
     }
 
 
-    addTaskPersonal = (taskDescription) => {
+    addTask = (taskDescription) => {
 
 
-        const taskToAddPersonal = { 
+        const taskToAdd = { 
             
             id: 10,
             category: "Personal",
@@ -99,30 +96,19 @@ class Container extends React.Component {
         };
 
 
-        const currentTasksPersonal = this.state.tasksPersonal;
+        const currentTasks = this.state.tasks;
 
-        currentTasksPersonal.push(taskToAddPersonal);
+        currentTasks.push(taskToAdd);
 
         this.setState({
-            tasksPersonal: currentTasksPersonal
+            tasks: currentTasks
         });
     }
 
-    completeTaskPersonal = (taskId) => {
+    completeTask = (taskId) => {
         alert(`Do you want to delete ${taskId} from state?`)
     }
 
-    // Work Task List functions
-
-    deleteTaskWork = (taskId) => {
-
-        const updatedTasksWork = this.state.tasksWork.filter(item => item.id !== taskId);
-
-        this.setState({
-            tasksWork: updatedTasksWork
-        });
-
-    }
 
     render() {
         return (
@@ -131,30 +117,22 @@ class Container extends React.Component {
                 <br></br>
                 <Header />
                 <br></br>
-                <Form addTaskFuncPersonal={this.addTaskPersonal} />
+                <Form addTaskFunc={this.addTask} />
                 <br></br>
                 <div className="row col-lg-12 flex-wrap">
 
-                    <div className="box row col-lg-8">
+                    <div className="box row col-lg-9">
                         <div className="col-5 taskTitle">
-                            Personal
+                            My Tasks
                             </div>
                         <TaskHeader />
                         <TaskList01
-                            taskCollectionPersonal={this.state.tasksPersonal}
-                            deleteTaskFuncPersonal={this.deleteTaskPersonal}
-                            completedTaskFuncPersonal={this.completeTaskPersonal} />
+                            taskCollection={this.state.tasks}
+                            deleteTaskFunc={this.deleteTask}
+                            completedTaskFunc={this.completeTask} />
                         {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
 
-                  
-
-                    {/* <div className="box row col-lg-8">
-                        <div className="col-5 taskTitle">
-                            Work
-                </div>
-                        <TaskHeader />
-                        <TaskList02 taskCollectionWork={this.state.tasksWork} deleteTaskFuncWork={this.deleteTaskWork} />
-                        {/* <TaskCount2 taskCount2={this.state.tasks.length} /> */}
+        
                     </div> 
 
                 </div>
