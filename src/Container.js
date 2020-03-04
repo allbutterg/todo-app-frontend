@@ -6,19 +6,31 @@ import Form from './Form';
 import TaskHeader from './TaskHeader';
 import TaskList01 from './TaskList01';
 import uuidv4 from 'uuid/v4'
+import axios from 'axios';
 
 
 class Container extends React.Component {
 
     state = {
         tasks : [
-
         ]
     };
 
     componentDidMount = () => {
-        console.log("App loaded");
+        //Fetch tasks from API
+        axios.get('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task')
+        .then((response) => {
+            //handle success
+            this.setState({
+                tasks: response.data.tasks
+            })
+        })
+        .catch((error) =>  {
+            //handle error
+            console.error(error);
+        });
     }
+
 
     //Tasks List
     // state = {
@@ -84,7 +96,7 @@ class Container extends React.Component {
 
     deleteTask = (taskId) => {
 
-        const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
+        const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
 
         this.setState({
             tasks: updatedTasks
@@ -98,11 +110,11 @@ class Container extends React.Component {
 
         const taskToAdd = {
 
-            id: uuidv4(),
+            taskId: uuidv4(),
             category: taskCategory,
             description: taskDescription,
             priority: 2,
-            goaldate: "19/03/20",
+            goalDate: "19/03/20",
             completed: false
         };
 
