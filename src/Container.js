@@ -98,7 +98,7 @@ class Container extends React.Component {
 
 
         const currentTasks = this.state.tasks;
-
+ 
         currentTasks.push(taskToAdd);
 
         this.setState({
@@ -106,9 +106,9 @@ class Container extends React.Component {
         });
     }
 
-    // completeTask = (taskId) => {
-    //     alert(`Do you want to delete ${taskId} from state?`)
-    // }
+    completeTask = (taskId) => {
+        alert(`Do you want to delete ${taskId} from state?`)
+    }
 
 
     // completeTask = (taskId) => {

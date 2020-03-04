@@ -19,8 +19,12 @@ class TaskList01 extends React.Component {
             <div className="row col-12">
 
                 {this.props.taskCollection.map(
-                    (taskItem) => <Task key={taskItem.id} item={taskItem} deleteTaskFunc={this.props.deleteTaskFunc} completedTaskFunc={this.props.completeTask} />
-                )
+                    (taskItem) => <Task
+                    key={taskItem.id}
+                    item={taskItem}
+                    deleteTaskFunc={this.props.deleteTaskFunc} 
+                    completedTaskFunc={this.props.completedTaskFunc} />
+                ) 
                 }
 
 
