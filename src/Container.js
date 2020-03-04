@@ -10,7 +10,7 @@ import uuidv4 from 'uuid/v4'
 
 class Container extends React.Component {
 
-//Tasks List
+    //Tasks List
     state = {
         tasks: [
             {
@@ -86,8 +86,8 @@ class Container extends React.Component {
     addTask = (taskDescription, taskCategory, taskPriority, taskgoalDate) => {
 
 
-        const taskToAdd = { 
-            
+        const taskToAdd = {
+
             id: uuidv4(),
             category: taskCategory,
             description: taskDescription,
@@ -98,7 +98,7 @@ class Container extends React.Component {
 
 
         const currentTasks = this.state.tasks;
- 
+
         currentTasks.push(taskToAdd);
 
         this.setState({
@@ -107,31 +107,30 @@ class Container extends React.Component {
     }
 
     completeTask = (taskId) => {
-        alert(`Do you want to delete ${taskId} from state?`)
+        //Find the task that needs to be updated
+        const tasksBeingUpdated = this.state.tasks;
+        for (let i = 0; i < tasksBeingUpdated.length; i++) {
+            const task = tasksBeingUpdated[i];
+            if (task.id === taskId) {
+
+                //Update a property of identified task
+                task.completed = true;
+                break;
+
+            }
+        }
+
+        //Update the state to reflect changes made to this task
+        this.setState({
+            tasks: tasksBeingUpdated
+        });
     }
-
-
-    // completeTask = (taskId) => {
-
-    //     const tasksUpdated = this.state.tasks
-    //     for (let i = 0; i < tasks.length; i++) {
-    //         const task = tasksUpdated[i];
-    //         if (taskId.id === taskId) {
-
-    //             task.completed = truebreak;
-
-    //         }
-    //     }
-    //     this.setState({
-    //         tasks: tasksUpdated
-    //     });
-    //         }
 
 
     render() {
         return (
 
-            <div className="container">
+            <div className="Container">
                 <br></br>
                 <Header />
                 <br></br>
@@ -147,11 +146,11 @@ class Container extends React.Component {
                         <TaskList01
                             taskCollection={this.state.tasks}
                             deleteTaskFunc={this.deleteTask}
-                            completedTaskFunc={this.completeTask}/>
+                            completedTaskFunc={this.completeTask} />
                         {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
 
-        
-                    </div> 
+
+                    </div>
 
                 </div>
 
@@ -159,5 +158,7 @@ class Container extends React.Component {
 
         );
     }
+
 }
+
 export default Container;
