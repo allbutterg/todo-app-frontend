@@ -18,7 +18,7 @@ class Form extends React.Component {
       taskDescription: event.target.value
     });
   }
-
+ 
   taskCategoryChanged = (event) => {
     this.setState({
       taskCategory: event.target.value

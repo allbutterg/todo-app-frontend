@@ -5,6 +5,8 @@ import Header from './Header';
 import Form from './Form';
 import TaskHeader from './TaskHeader';
 import TaskList01 from './TaskList01';
+import uuidv4 from 'uuid/v4'
+
 
 class Container extends React.Component {
 
@@ -12,7 +14,7 @@ class Container extends React.Component {
     state = {
         tasks: [
             {
-                id: 1,
+                id: uuidv4(),
                 category: "Personal",
                 description: "Complete TR homework",
                 priority: 1,
@@ -21,7 +23,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 2,
+                id: uuidv4(),
                 category: "Personal",
                 description: "Renew Driving Licence",
                 priority: 1,
@@ -30,7 +32,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 3,
+                id: uuidv4(),
                 category: "Personal",
                 description: "Book theatre tickets",
                 priority: 2,
@@ -39,7 +41,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 4,
+                id: uuidv4(),
                 category: "Work",
                 description: "Prepare check-in presentation",
                 priority: 1,
@@ -48,7 +50,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 5,
+                id: uuidv4(),
                 category: "Work",
                 description: "Read E-commerce book",
                 priority: 3,
@@ -57,7 +59,7 @@ class Container extends React.Component {
             },
 
             {
-                id: 6,
+                id: uuidv4(),
                 category: "Work",
                 description: "Gain feedback from team",
                 priority: 2,
@@ -86,7 +88,7 @@ class Container extends React.Component {
 
         const taskToAdd = { 
             
-            id: 7,
+            id: uuidv4(),
             category: taskCategory,
             description: taskDescription,
             priority: 2,
@@ -109,6 +111,23 @@ class Container extends React.Component {
     // }
 
 
+    // completeTask = (taskId) => {
+
+    //     const tasksUpdated = this.state.tasks
+    //     for (let i = 0; i < tasks.length; i++) {
+    //         const task = tasksUpdated[i];
+    //         if (taskId.id === taskId) {
+
+    //             task.completed = truebreak;
+
+    //         }
+    //     }
+    //     this.setState({
+    //         tasks: tasksUpdated
+    //     });
+    //         }
+
+
     render() {
         return (
 
@@ -127,7 +146,8 @@ class Container extends React.Component {
                         <TaskHeader />
                         <TaskList01
                             taskCollection={this.state.tasks}
-                            deleteTaskFunc={this.deleteTask}/>
+                            deleteTaskFunc={this.deleteTask}
+                            completedTaskFunc={this.completeTask}/>
                         {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
 
         
