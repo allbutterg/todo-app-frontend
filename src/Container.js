@@ -10,65 +10,75 @@ import uuidv4 from 'uuid/v4'
 
 class Container extends React.Component {
 
-    //Tasks List
     state = {
-        tasks: [
-            {
-                id: uuidv4(),
-                category: "Personal",
-                description: "Complete TR homework",
-                priority: 1,
-                goaldate: "19/03/20",
-                completed: false
-            },
-
-            {
-                id: uuidv4(),
-                category: "Personal",
-                description: "Renew Driving Licence",
-                priority: 1,
-                goaldate: "16/02/20",
-                completed: false
-            },
-
-            {
-                id: uuidv4(),
-                category: "Personal",
-                description: "Book theatre tickets",
-                priority: 2,
-                goaldate: "29/02/20",
-                completed: false
-            },
-
-            {
-                id: uuidv4(),
-                category: "Work",
-                description: "Prepare check-in presentation",
-                priority: 1,
-                goaldate: "05/03/20",
-                completed: false
-            },
-
-            {
-                id: uuidv4(),
-                category: "Work",
-                description: "Read E-commerce book",
-                priority: 3,
-                goaldate: "14/02/20",
-                completed: false
-            },
-
-            {
-                id: uuidv4(),
-                category: "Work",
-                description: "Gain feedback from team",
-                priority: 2,
-                goaldate: "21/02/20",
-                completed: false
-            }
+        tasks : [
 
         ]
+    };
+
+    componentDidMount = () => {
+        console.log("App loaded");
     }
+
+    //Tasks List
+    // state = {
+    //     tasks: [
+    //         {
+    //             id: uuidv4(),
+    //             category: "Personal",
+    //             description: "Complete TR homework",
+    //             priority: 1,
+    //             goaldate: "19/03/20",
+    //             completed: false
+    //         },
+
+    //         {
+    //             id: uuidv4(),
+    //             category: "Personal",
+    //             description: "Renew Driving Licence",
+    //             priority: 1,
+    //             goaldate: "16/02/20",
+    //             completed: false
+    //         },
+
+    //         {
+    //             id: uuidv4(),
+    //             category: "Personal",
+    //             description: "Book theatre tickets",
+    //             priority: 2,
+    //             goaldate: "29/02/20",
+    //             completed: false
+    //         },
+
+    //         {
+    //             id: uuidv4(),
+    //             category: "Work",
+    //             description: "Prepare check-in presentation",
+    //             priority: 1,
+    //             goaldate: "05/03/20",
+    //             completed: false
+    //         },
+
+    //         {
+    //             id: uuidv4(),
+    //             category: "Work",
+    //             description: "Read E-commerce book",
+    //             priority: 3,
+    //             goaldate: "14/02/20",
+    //             completed: false
+    //         },
+
+    //         {
+    //             id: uuidv4(),
+    //             category: "Work",
+    //             description: "Gain feedback from team",
+    //             priority: 2,
+    //             goaldate: "21/02/20",
+    //             completed: false
+    //         }
+
+    //     ]
+    // }
 
     //Task List functions
 
@@ -127,7 +137,7 @@ class Container extends React.Component {
     }
 
 
-    render() {
+    render() { 
 
         return (
 

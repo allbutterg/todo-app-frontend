@@ -129,12 +129,19 @@ label {
 button:hover {
     color: #C8A2C8;
 }
+
+
 .taskEntry:hover {
     cursor: pointer;
     color: #C8A2C8;
 }
 
 .goalDate:hover {
+    color: #C8A2C8;
+}
+
+.completedTask {
+    text-decoration: line-through;
     color: #C8A2C8;
 }
 
