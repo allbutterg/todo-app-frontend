@@ -5,7 +5,6 @@ import Header from './Header';
 import Form from './Form';
 import TaskHeader from './TaskHeader';
 import TaskList01 from './TaskList01';
-import TaskList02 from './TaskList02';
 
 class Container extends React.Component {
 
@@ -82,15 +81,15 @@ class Container extends React.Component {
     }
 
 
-    addTask = (taskDescription) => {
+    addTask = (taskDescription, taskCategory, taskPriority, taskgoalDate) => {
 
 
         const taskToAdd = { 
             
-            id: 10,
-            category: "Personal",
+            id: 7,
+            category: taskCategory,
             description: taskDescription,
-            priority: 1,
+            priority: 2,
             goaldate: "19/03/20",
             completed: false
         };
@@ -105,9 +104,9 @@ class Container extends React.Component {
         });
     }
 
-    completeTask = (taskId) => {
-        alert(`Do you want to delete ${taskId} from state?`)
-    }
+    // completeTask = (taskId) => {
+    //     alert(`Do you want to delete ${taskId} from state?`)
+    // }
 
 
     render() {
@@ -128,8 +127,7 @@ class Container extends React.Component {
                         <TaskHeader />
                         <TaskList01
                             taskCollection={this.state.tasks}
-                            deleteTaskFunc={this.deleteTask}
-                            completedTaskFunc={this.completeTask} />
+                            deleteTaskFunc={this.deleteTask}/>
                         {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
 
         

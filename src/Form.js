@@ -4,12 +4,12 @@ import './App.css';
 
 class Form extends React.Component {
 
-  state = {
-    taskDescription: "Enter your task..."
-  }
+  // state = {
+  //   taskDescription: "Enter your task..."
+  // }
 
   addTask = () => {
-    this.props.addTaskFunc(this.state.taskDescription);
+    this.props.addTaskFunc(this.state.taskDescription, this.state.taskCategory);
   }
 
 
@@ -18,6 +18,27 @@ class Form extends React.Component {
       taskDescription: event.target.value
     });
   }
+
+  taskCategoryChanged = (event) => {
+    this.setState({
+      taskCategory: event.target.value
+    });
+  }
+
+  // taskPriorityChanged = (event) => {
+  //   this.setState({
+  //     taskPriority: event.target.value
+  //   });
+  // }
+
+  // taskgoalDateChanged = (event) => {
+  //   this.setState({
+  //     taskgoalDate: event.target.value
+  //   });
+  // }
+
+
+
 
 
   render() {
@@ -44,7 +65,7 @@ class Form extends React.Component {
             <label for="categoryTask" className="col-lg-5 col-form-label-lg">Category:</label>
             <div className="col-lg-6">
               <input type="text" class="form-control" name="categoryTask" id="categoryTask"
-                placeholder="Work? Personal?"></input>
+                placeholder="Work? Personal?" onChange={this.taskCategoryChanged}></input>
             </div>
           </>
 
@@ -53,7 +74,7 @@ class Form extends React.Component {
           <>
             <label for="priority" className="col-lg-5 col-form-label-lg">Priority:</label>
             <div className="col-lg-2">
-              <select className="form-control" name="priority" id="priority">
+              <select className="form-control" name="priority" id="priority" onChange={this.taskPriorityChanged}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -67,7 +88,7 @@ class Form extends React.Component {
           <>
             <label for="completeBy" className="col-lg-5 col-form-label-lg">Complete By:</label>
             <div className="col-lg-6">
-              <input type="date" className="form-control" name="completeBy" id="completeBy"></input>
+              <input type="date" className="form-control" name="completeBy" id="completeBy" onChange={this.taskgoalDateChanged}></input>
 
             </div>
           </>
