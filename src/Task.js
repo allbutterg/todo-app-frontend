@@ -6,16 +6,16 @@ import './App.css';
 class Task extends React.Component {
 
     editClicked = () => {
-        alert(`Do you want to edit your task ${this.props.item.id}?`);
+        alert(`Do you want to edit your task ${this.props.item.taskId}?`);
     }
 
     deleteClicked = () => {
-        this.props.deleteTaskFunc(this.props.item.id);
+        this.props.deleteTaskFunc(this.props.item.taskId);
 
     }
 
     doneClicked = () => {
-        this.props.completedTaskFunc(this.props.item.id);
+        this.props.completedTaskFunc(this.props.item.taskId);
     }
 
 
@@ -37,7 +37,7 @@ class Task extends React.Component {
                 {description}
                 </div>
                 <div className="col-2 categoryName">{this.props.item.category}</div>
-                <div className="col-3 goalDate">{this.props.item.goaldate}</div>
+                <div className="col-3 goalDate">{this.props.item.goalDate}</div>
                 <div className="col-3">
                     <button type="button" onClick={this.editClicked}> <i className="far fa-edit"></i></button>  <button type="button" onClick={this.deleteClicked}> <i
                         className="far fa-trash-alt"></i></button> <button type="button" onClick={this.doneClicked}> <i

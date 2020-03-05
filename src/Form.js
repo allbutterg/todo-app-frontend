@@ -9,7 +9,7 @@ class Form extends React.Component {
   // }
 
   addTask = () => {
-    this.props.addTaskFunc(this.state.taskDescription, this.state.taskCategory);
+    this.props.addTaskFunc(this.state.taskDescription, this.state.taskCategory, this.state.taskPriority, this.state.taskgoalDate);
   }
 
 
@@ -22,6 +22,12 @@ class Form extends React.Component {
   taskCategoryChanged = (event) => {
     this.setState({
       taskCategory: event.target.value
+    });
+  }
+
+  taskgoalDateChanged = (event) => {
+    this.setState({
+      taskgoalDate: event.target.value
     });
   }
 

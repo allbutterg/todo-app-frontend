@@ -110,30 +110,42 @@ class Container extends React.Component {
 
         const taskToAdd = {
 
-            taskId: uuidv4(),
+            // taskId: uuidv4(),
             category: taskCategory,
             description: taskDescription,
-            priority: 2,
-            goalDate: "19/03/20",
+            priority: taskPriority,
+            goalDate: taskgoalDate,
             completed: false
         };
 
+        axios.post('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task', taskToAdd)
+        .then((response) => {
+            taskToAdd.taskId = response.data.tasks.taskId;
 
-        const currentTasks = this.state.tasks;
+            console.log(taskToAdd); 
+            //Get current list of tasks from state
+            const currentTasks = this.state.tasks;
 
-        currentTasks.push(taskToAdd);
+            //Add the 'taskToAdd' to the array of tasks in state
+            currentTasks.push(taskToAdd);
 
-        this.setState({
-            tasks: currentTasks
+            //Update the state
+            this.setState({
+                tasks: currentTasks
+            });
+        })
+        .catch((error) =>  {
+            //handle error
+            console.error(error);
         });
-    }
+    };
 
     completeTask = (taskId) => {
         //Find the task that needs to be updated
         const tasksBeingUpdated = this.state.tasks;
         for (let i = 0; i < tasksBeingUpdated.length; i++) {
             const task = tasksBeingUpdated[i];
-            if (task.id === taskId) {
+            if (task.taskId === taskId) {
 
                 //Update a property of identified task
                 task.completed = true;
@@ -147,6 +159,8 @@ class Container extends React.Component {
             tasks: tasksBeingUpdated
         });
     }
+
+
 
 
     render() { 
@@ -183,5 +197,7 @@ class Container extends React.Component {
     }
 
 }
+
+
 
 export default Container;
