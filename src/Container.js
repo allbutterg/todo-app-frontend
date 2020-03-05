@@ -12,23 +12,23 @@ import axios from 'axios';
 class Container extends React.Component {
 
     state = {
-        tasks : [
+        tasks: [
         ]
     };
 
     componentDidMount = () => {
         //Fetch tasks from API
         axios.get('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task')
-        .then((response) => {
-            //handle success
-            this.setState({
-                tasks: response.data.tasks
+            .then((response) => {
+                //handle success
+                this.setState({
+                    tasks: response.data.tasks
+                })
             })
-        })
-        .catch((error) =>  {
-            //handle error
-            console.error(error);
-        });
+            .catch((error) => {
+                //handle error
+                console.error(error);
+            });
     }
 
 
@@ -96,28 +96,21 @@ class Container extends React.Component {
 
     deleteTask = (taskId) => {
 
-    //     const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+        const tasks = this.state.tasks;
 
-    //     this.setState({
-    //         tasks: updatedTasks
-    //     });
-
-    // }
+        axios.delete('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task/{taskId}')
+            .then((response) => {
 
 
-    axios.delete('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task{taskId}', updatedTasks)
-        .then((response) => {
-           
-            const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+                const updatedTasks = tasks.filter(item => item.taskId !== taskId);
 
-            this.setState({
-                tasks: updatedTasks
+                this.setState({
+                    tasks: updatedTasks
+                });
+            })
+            .catch((error) => {
+                console.error(error);
             });
-        })
-        .catch((error) =>  {
-            //handle error
-            console.error(error);
-        });
     };
 
 
@@ -126,7 +119,6 @@ class Container extends React.Component {
 
         const taskToAdd = {
 
-            // taskId: uuidv4(),
             category: taskCategory,
             description: taskDescription,
             priority: taskPriority,
@@ -135,25 +127,25 @@ class Container extends React.Component {
         };
 
         axios.post('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task', taskToAdd)
-        .then((response) => {
-            taskToAdd.taskId = response.data.tasks.taskId;
+            .then((response) => {
+                taskToAdd.taskId = response.data.tasks.taskId;
 
-            console.log(taskToAdd); 
-            //Get current list of tasks from state
-            const currentTasks = this.state.tasks;
+                console.log(taskToAdd);
+                //Get current list of tasks from state
+                const currentTasks = this.state.tasks;
 
-            //Add the 'taskToAdd' to the array of tasks in state
-            currentTasks.push(taskToAdd);
+                //Add the 'taskToAdd' to the array of tasks in state
+                currentTasks.push(taskToAdd);
 
-            //Update the state
-            this.setState({
-                tasks: currentTasks
+                //Update the state
+                this.setState({
+                    tasks: currentTasks
+                });
+            })
+            .catch((error) => {
+                //handle error
+                console.error(error);
             });
-        })
-        .catch((error) =>  {
-            //handle error
-            console.error(error);
-        });
     };
 
     completeTask = (taskId) => {
@@ -179,7 +171,7 @@ class Container extends React.Component {
 
 
 
-    render() { 
+    render() {
 
         return (
 
