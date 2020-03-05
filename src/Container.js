@@ -96,13 +96,29 @@ class Container extends React.Component {
 
     deleteTask = (taskId) => {
 
-        const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+    //     const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
 
-        this.setState({
-            tasks: updatedTasks
+    //     this.setState({
+    //         tasks: updatedTasks
+    //     });
+
+    // }
+
+
+    axios.delete('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task{taskId}', updatedTasks)
+        .then((response) => {
+           
+            const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+
+            this.setState({
+                tasks: updatedTasks
+            });
+        })
+        .catch((error) =>  {
+            //handle error
+            console.error(error);
         });
-
-    }
+    };
 
 
     addTask = (taskDescription, taskCategory, taskPriority, taskgoalDate) => {
