@@ -96,11 +96,13 @@ class Container extends React.Component {
 
     deleteTask = (taskId) => {
 
+        const tasks = this.state.tasks;
+
         axios.delete('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task/{taskId}')
             .then((response) => {
 
 
-                const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+                const updatedTasks = tasks.filter(item => item.taskId !== taskId);
 
                 this.setState({
                     tasks: updatedTasks
@@ -146,74 +148,93 @@ class Container extends React.Component {
             });
     };
 
-    completeTask = (taskId) => {
+        //Find the task that needs to be updated
+        //     const tasksBeingUpdated = this.state.tasks;
+        //     for (let i = 0; i < tasksBeingUpdated.length; i++) {
+        //         const task = tasksBeingUpdated[i];
+        //         if (task.taskId === taskId) {
 
-        const tasksBeingUpdated = this.state.tasks;
+        //             //Update a property of identified task
+        //             task.completed = true;
+        //             break;
 
+        //         }
+        //     }
 
+        //     //Update the state to reflect changes made to this task
+        //     this.setState({
+        //         tasks: tasksBeingUpdated
+        //     });
+        // };
 
-    axios.put('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task/{taskId}', tasksBeingUpdated)
+    
+        completeTask = (taskId) => {
+        axios.put('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task/{taskId}')
             .then((response) => {
 
-    //Find the task that needs to be updated
-    for (let i = 0; i < tasksBeingUpdated.length; i++) {
-        const task = tasksBeingUpdated[i];
-        if (task.taskId === taskId) {
+                const tasksBeingUpdated = this.state.tasks;
+                for (let i = 0; i < tasksBeingUpdated.length; i++) {
+                    const task = tasksBeingUpdated[i];
+                    if (task.taskId === taskId) {
 
-            //Update a property of identified task
-            task.completed = true;
-            break;
+                        task.completed = true;
+                        break;
 
-        }
-    }
+                    }
+                }
 
-    this.setState({
-        tasks: tasksBeingUpdated
+                axios.get('https://s3rgj603ke.execute-api.eu-west-2.amazonaws.com/dev/task')
+                .then((response) => {
+
+                this.setState({
+                    tasks: tasksBeingUpdated
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     });
-})
-            .catch ((error) => {
-    console.error(error);
-});
-    };
+}
 
 
 
 
+    render() {
 
-render() {
+        return (
 
-    return (
+            <div className="Container">
+                <br></br>
+                <Header />
+                <br></br>
+                <Form addTaskFunc={this.addTask} />
+                <br></br>
+                <div className="row col-lg-12 flex-wrap">
 
-        <div className="Container">
-            <br></br>
-            <Header />
-            <br></br>
-            <Form addTaskFunc={this.addTask} />
-            <br></br>
-            <div className="row col-lg-12 flex-wrap">
-
-                <div className="box row col-lg-9">
-                    <div className="col-5 taskTitle">
-                        My Tasks
+                    <div className="box row col-lg-9">
+                        <div className="col-5 taskTitle">
+                            My Tasks
                             </div>
-                    <TaskHeader />
-                    <TaskList01
-                        taskCollection={this.state.tasks}
-                        deleteTaskFunc={this.deleteTask}
-                        completedTaskFunc={this.completeTask} />
-                    {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
+                        <TaskHeader />
+                        <TaskList01
+                            taskCollection={this.state.tasks}
+                            deleteTaskFunc={this.deleteTask}
+                            completedTaskFunc={this.completeTask} />
+                        {/* <TaskCount1 taskCount1={this.state.tasks.length} /> */}
 
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    );
-}
+        );
+    }
 
 }
+
+
 
 
 
